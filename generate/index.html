@@ -21,8 +21,7 @@ if (getQuery("data") === null || getQuery("data") === "") {
 } else {
     var img = qr.image({
         value: decodeURIComponent(getQuery("data")),
-        width: getQuery("size") || 128,
-        height: getQuery("size") || 128,
+        size: getQuery("size") || 4,
         foreground : "#" + (getQuery("foreground") || "000000"),
         background : "#" + (getQuery("background") || "FFFFFF"),
         level : getQuery("correction") || "H"
