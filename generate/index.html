@@ -14,7 +14,7 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
 </script>
 <script>
 if (getQuery("data") === null || getQuery("data") === "") {
-    document.getElementById("qrcode").innerHTML = "<h1>ERROR<h1><p>You did not specify the required parameter: data(the data of the qr code)</p>";
+    document.getElementById("qrcode").innerHTML = "<h1>ERROR</h1><p>You did not specify the required parameter: data(the data of the qr code after being encoded with encodeURIComponent)</p>";
 } else {
     var qrcode = new QRCode(document.getElementById("qrcode"), {
     text: decodeURIComponent(getQuery("data")),
