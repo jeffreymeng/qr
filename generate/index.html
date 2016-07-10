@@ -17,11 +17,11 @@ if (getQuery("data") === null || getQuery("data") === "") {
     document.getElementById("qrcode").innerHTML = "<h1>ERROR<h1><p>You did not specify the required parameter: data(the data of the qr code)</p>";
 } else {
     var qrcode = new QRCode(document.getElementById("qrcode"), {
-    text: getQuery("data"),
+    text: decodeURIComponent(getQuery("data")),
     width: getQuery("size") || 128,
     height: getQuery("size") || 128,
     colorDark : "#" + (getQuery("colorDark") || "000000"),
-    colorLight : "#" + (getQuery("colorLoght") || "FFFFFF"),
+    colorLight : "#" + (getQuery("colorLight") || "FFFFFF"),
     correctLevel : QRCode.CorrectLevel.H
 });
 }
