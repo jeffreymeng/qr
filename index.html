@@ -1,16 +1,59 @@
 <html>
 
-<body>
+<head>
     <script>
         if (window.location.protocol === "http") {
             window.location.href = "https" + window.location.href.substring(4)
         }
     </script>
-    <link rel="stylesheet" href="css/prism.css" type="text/css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="col-lg-12"><div class="container">
+        <link rel="stylesheet" href="css/prism.css" type="text/css" />
     <h1>Welcome to QRID</h1>
     <p> A qr reading and writing service mainly intended for internal development and use only, but you're still welcome to use it if you want.</p>
     <h3>Documentation:</h3>
-    <p>To generate a qr code, include a iframe with the following url: <pre><code>https://qr.jeffkmeng.com/generate?data=&lt;Data for your qr code>&width=&lt;Width of qr code (optional)>&height=&lt;Height of qr code (optional)></code></pre></p>
+    <p>To generate a qr code, include a iframe with the following url: <pre><code>https://qr.jeffkmeng.com/generate?<b>params</b></code></pre></p>
+    Parameters:
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        <th>Defualt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>data</td>
+        <td>The data that the qr code should show.</td>
+        <td>required</td>
+      </tr>
+      <tr>
+        <td>size</td>
+        <td>The legnth of one side of the qr code(it is a square)</td>
+        <td>128</td>
+      </tr>
+      <tr>
+        <td>colorDark</td>
+        <td>The dark color of the qr code(hexadecimal)</td>
+        <td>#000000(black)</td>
+      </tr>
+      <tr>
+        <td>colorLight</td>
+        <td>The light color of the qr code(hexadecimal)</td>
+        <td>#FFFFFF(white)</td>
+      </tr>
+    </tbody>
+  </table>
+    </div></div>
+    
     
 
-</body></html>
+</body>
+
+</html>

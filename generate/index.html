@@ -18,8 +18,8 @@ if (getQuery("data") === null || getQuery("data") === "") {
 } else {
     var qrcode = new QRCode(document.getElementById("qrcode"), {
     text: getQuery("data"),
-    width: getQuery("width") || 128,
-    height: getQuery("height") || 128,
+    width: getQuery("size") || 128,
+    height: getQuery("size") || 128,
     colorDark : getQuery("colorDark") || "#000000",
     colorLight : getQuery("colorLoght") || "#FFFFFF",
     correctLevel : QRCode.CorrectLevel.H
