@@ -39,17 +39,34 @@
         <td>128</td>
       </tr>
       <tr>
-        <td>colorDark</td>
-        <td>The dark color of the qr code(hexadecimal) Make sure not to include the hashtag(#)!</td>
+        <td>foreground</td>
+        <td>The dark color(foreground) of the qr code(hexadecimal) Make sure not to include the hashtag(#)!</td>
         <td>000000(black)</td>
       </tr>
       <tr>
-        <td>colorLight</td>
-        <td>The light color of the qr code(hexadecimal) Make sure not to include the hashtag(#)!</td>
+        <td>background</td>
+        <td>The light color(background) of the qr code(hexadecimal) Make sure not to include the hashtag(#)!</td>
+        <td>FFFFFF(white)</td>
+      </tr>
+      <tr>
+        <td>correction</td>
+        <td>The <a href="#correction"></a>correction level of the QR Code!</td>
         <td>FFFFFF(white)</td>
       </tr>
     </tbody>
   </table>
+  <a name="correction"></a>
+  <h2>What are correction levels?</h2>
+<p>
+  ECC (Error Correction Capacity) levels represent the amount of data that can be restored if the QR
+  code symbol is smudged or damanged. There are four ECC(Error Correction Capacity)
+  levels ranging from <b>L</b> (smallest) to <b>H</b> (best);
+  <b>L</b> - Low : About 7% of codewords can be restored
+  <b>M</b> - Medium : About 15% of codewords can be restored
+  <b>Q</b> - Quartile : About 25% of codewords can be restored
+  <b>H</b> - High : About 30% of codewords can be restored
+</p>
+
     </div></div>
     
     
