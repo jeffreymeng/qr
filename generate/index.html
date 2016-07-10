@@ -20,8 +20,8 @@ if (getQuery("data") === null || getQuery("data") === "") {
     text: getQuery("data"),
     width: getQuery("size") || 128,
     height: getQuery("size") || 128,
-    colorDark : getQuery("colorDark") || "#000000",
-    colorLight : getQuery("colorLoght") || "#FFFFFF",
+    colorDark : "#" + (getQuery("colorDark") || "000000"),
+    colorLight : "#" + (getQuery("colorLoght") || "FFFFFF"),
     correctLevel : QRCode.CorrectLevel.H
 });
 }
