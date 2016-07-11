@@ -1,0 +1,33 @@
+  <script src="jquery.js"></script>
+<p>Scanning a code may take a while. Please try patiently, or <a href="redeem.html">enter the code manually</a><br>Try to hold the paper on the corners, stretch the paper so it is not bent, and hole it as still as possible. You will be automatically redirected when the code is detected.</p>
+
+ <script src="readqr.min.js"></script>
+ <div id="reader" style="width:300px;height:250px">
+ </div>
+ <p id="data"></p>
+ <script>
+ function getQuery(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+  $('#reader').html5_qrcode(function(data){
+        var action=JSON.prase(decodeURIComponent(getQuery("action")));
+        if (action.type === "redirect" && (action.data.url === null ||action.data.url === "")) {
+            window.location.href = data;
+        } else if (action.type === "redirect" && (action.data.url !== null ||action.data.url !== "") ) {
+            window.location.href === action.data.url.substring(0, action.data.url.indexOf("%[")) + data + action.data.url.substring(action.data.url.indexOf("]%") + 2)
+        }
+        
+    },
+    function(error){
+        //show read errors 
+    }, function(videoError){
+        //the video stream could be opened
+    }
+);
+  </script>
