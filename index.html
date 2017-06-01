@@ -18,7 +18,7 @@
 			<p> A qr reading and writing service mainly intended for internal development and use only, but you're still welcome to use it if you want.</p>
 			<h2>Documentation:</h2>
 			<p>To generate a qr code, include a iframe with the following url: <pre><code>https://qr.jeffkmeng.com/generate?<b>param1name</b>=<b>param1value</b>&<b>param2name</b>=<b>param2value</b>&<b>param3name</b>=<b>param3value</b></code></pre></p>
-			<b>Please note that all parameters must be <a href"#urlencode">URL encoded</a> if they are not url safe. You can use <a href"#urlencode">this tool</a>.</b>
+			<b>Please note that all parameters must be <a href="#urlencode">URL encoded</a> if they are not url safe. You can use <a href="#urlencode">this tool</a>.</b>
 			Parameters:
 			<table class="table table-hover">
 				<thead>
@@ -31,7 +31,7 @@
 				<tbody>
 					<tr>
 						<td>data</td>
-						<td>The data, <a href"#urlencode">URL encoded</a>, that the qr code should show.</td>
+						<td>The data, <a href="#urlencode">URL encoded</a>, that the qr code should show.</td>
 						<td>required</td>
 					</tr>
 					<tr>
@@ -62,7 +62,7 @@
 					</tr>
 					<tr>
 						<td>widgetData</td>
-						<td>If you choose html or text for the wiget, you MUST put the <a href"#urlencode">URL encoded</a> data here, or else the widget will not show. Optional if you choose link for the widget attribute(if you use this attribute, the link text will be changed to this attribute). Ignored if you did not choose html or text for widget.</td>
+						<td>If you choose html or text for the wiget, you MUST put the <a href="#urlencode">URL encoded</a> data here, or else the widget will not show. Optional if you choose link for the widget attribute(if you use this attribute, the link text will be changed to this attribute). Ignored if you did not choose html or text for widget.</td>
 						<td><code>null</code></td>
 					</tr>
 				</tbody>
