@@ -1,86 +1,118 @@
 <html>
 
 <head>
-    <script>
-        if (window.location.protocol === "http") {
-            window.location.href = "https" + window.location.href.substring(4)
-        }
-    </script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
+	<script>
+		if (window.location.protocol === "http") {
+			window.location.href = "https" + window.location.href.substring(4)
+		}
+	</script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" type="text/css" href="https://assets.jeffkmeng.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 
 <body>
-    <div class="col-lg-12"><div class="container">
-        <link rel="stylesheet" href="css/prism.css" type="text/css" />
-    <h1>Welcome to QRID</h1>
-    <p> A qr reading and writing service mainly intended for internal development and use only, but you're still welcome to use it if you want.</p>
-    <h2>Documentation:</h2>
-    <p>To generate a qr code, include a iframe with the following url: <pre><code>https://qr.jeffkmeng.com/generate?<b>param1name</b>=<b>param1value</b>&<b>param2name</b>=<b>param2value</b>&<b>param3name</b>=<b>param3value</b></code></pre></p>
-    Parameters:
-    <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Parameter</th>
-        <th>Description</th>
-        <th>Defualt</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>data</td>
-        <td>The data encoded with encodeURIComponent that the qr code should show.</td>
-        <td>required</td>
-      </tr>
-      <tr>
-        <td>size</td>
-        <td>Module size of the generated QR code (e.g. 1-10 — actual size of the QR code symbol and is scaled to 25 pixels)	</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td>foreground</td>
-        <td>The dark color(foreground) of the qr code(hexadecimal) Make sure not to include the hashtag(#)!</td>
-        <td>000000(black)</td>
-      </tr>
-      <tr>
-        <td>background</td>
-        <td>The light color(background) of the qr code(hexadecimal) Make sure not to include the hashtag(#)!</td>
-        <td>FFFFFF(white)</td>
-      </tr>
-      <tr>
-        <td>correction</td>
-        <td>The <a href="#correction"></a>correction level of the QR Code!</td>
-        <td>H(high)</td>
-      </tr>
-      <tr>
-        <td>widget</td>
-        <td>Wether to include a widget for the qr code or not. Choose from: html(specify html to go inside wiget), text(choose text to go inside wiget), data(only put the qr code data inside the wiget), or none</td>
-        <td>data</td>
-      </tr>
-      <tr>
-        <td>widgetData</td>
-        <td>If you choose html or text for the wiget, you MUST put the url-encoded data here, or else the widget will not show. Ignored if you did not choose html or text for widget.</td>
-        <td>&lt;null></td>
-      </tr>
-    </tbody>
-  </table>
-  <a name="correction"></a>
-  <h3>What are correction levels?</h3>
-<p>
-  ECC (Error Correction Capacity) levels represent the amount of data that can be restored if the QR
-  code symbol is smudged or damanged. There are four ECC(Error Correction Capacity)
-  levels ranging from <b>L</b> (smallest) to <b>H</b> (best)<br>
-  <b>L</b> - Low : About 7% of codewords can be restored<br>
-  <b>M</b> - Medium : About 15% of codewords can be restored<br>
-  <b>Q</b> - Quartile : About 25% of codewords can be restored<br>
-  <b>H</b> - High : About 30% of codewords can be restored
-</p>
-<h3>Example:</h3>
-<iframe width="100%" height="330" src="https://jsfiddle.net/jmeng/kbxj8bfo/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-</div></div>
-    
-    
+	<div class="col-lg-12">
+		<div class="container">
+			<link rel="stylesheet" href="css/prism.css" type="text/css" />
+			<h1>Welcome to QRID</h1>
+			<p> A qr reading and writing service mainly intended for internal development and use only, but you're still welcome to use it if you want.</p>
+			<h2>Documentation:</h2>
+			<p>To generate a qr code, include a iframe with the following url: <pre><code>https://qr.jeffkmeng.com/generate?<b>param1name</b>=<b>param1value</b>&<b>param2name</b>=<b>param2value</b>&<b>param3name</b>=<b>param3value</b></code></pre></p>
+			<b>Please note that all parameters must be url encoded if they are not url safe.</b>
+			Parameters:
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Parameter</th>
+						<th>Description</th>
+						<th>Defualt</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>data</td>
+						<td>The data encoded with encodeURIComponent that the qr code should show.</td>
+						<td>required</td>
+					</tr>
+					<tr>
+						<td>size</td>
+						<td>Module size of the generated QR code (e.g. 1-10 — actual size of the QR code symbol and is scaled to 25 pixels) </td>
+						<td><code>4</code></td>
+					</tr>
+					<tr>
+						<td>foreground</td>
+						<td>The dark color(foreground) of the qr code(hexadecimal) Make sure not to include the hashtag(#)!</td>
+						<td><code>"000000"</code></td>
+					</tr>
+					<tr>
+						<td>background</td>
+						<td>The light color(background) of the qr code(hexadecimal) Make sure not to include the hashtag(#)!</td>
+						<td><code>"FFFFFF"</code></td>
+					</tr>
+					<tr>
+						<td>correction</td>
+						<td>The
+							<a href="#correction"></a>correction level of the QR Code!</td>
+						<td><code>"H"</code></td>
+					</tr>
+					<tr>
+						<td>widget</td>
+						<td>Wether to include a widget for the qr code or not. Choose from: html(specify html to go inside wiget), text(choose text to go inside wiget), data(only put the qr code data inside the wiget), link(like data, except a link element is added) or none</td>
+						<td><code>null</code></td>
+					</tr>
+					<tr>
+						<td>widgetData</td>
+						<td>If you choose html or text for the wiget, you MUST put the url-encoded data here, or else the widget will not show. Optional if you choose link for the widget attribute(if you use this attribute, the link text will be changed to this attribute). Ignored if you did not choose html or text for widget.</td>
+						<td><code>null</code></td>
+					</tr>
+				</tbody>
+			</table>
+			<a name="urlencode"></a>
+			<h3>URL encoding tool:</h3>
+			<p>
+				This is encoded with the standard <code>encodeURIComponent()</code> function of javascript.
+			</p>
+			<label for="urlencode-data">Data to be encoded:</label>
+			<input class="form-control" id="urlencode-data">
+			<label for="urlencode-result-box">Encoded data(live):</label>
+			<li class="list-group-item" id="urlencode-result-box">
+                        <div class="input-group">
+                            <input type="text" class="form-control code" value='This text box will change as soon as you type something into the above box.' id="urlencode-result">
+                            <span class="input-group-btn" id="urlencode-result-clip">
+                                <button class="btn btn-default clipboard-btn" type="button" data-clipboard-target="#urlencode-result"><img height="20" src="https://assets.jeffkmeng.com/clipboard/1.5.12/svg/clipboard.svg" alt="Copy To Clipboard"></button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                    </li>
+			<a name="correction"></a>
+			<h3>What are correction levels?</h3>
+			<p>
+				ECC (Error Correction Capacity) levels represent the amount of data that can be restored if the QR code symbol is smudged or damanged. There are four ECC(Error Correction Capacity) levels ranging from <b>L</b> (smallest) to <b>H</b> (best)<br>
+				<b>L</b> - Low : About 7% of codewords can be restored<br>
+				<b>M</b> - Medium : About 15% of codewords can be restored<br>
+				<b>Q</b> - Quartile : About 25% of codewords can be restored<br>
+				<b>H</b> - High : About 30% of codewords can be restored
+			</p>
+			<h3>Example:</h3>
+			<iframe width="100%" height="330" src="https://jsfiddle.net/jmeng/kbxj8bfo/embedded/html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+			<br>
+			<br>
+			<br>
+			<hr>
+			<p>Copyright &copy; 2017 Jeffrey Meng</p>
+		</div>
+	</div>
+	<script src="https://assets.jeffkmeng.com/jquery/2.2.4/js/jquery.min.js"></script>
+<script src="https://assets.jeffkmeng.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+            <script src="https://assets.jeffkmeng.com/clipboard/1.5.12/js/clipboard.min.js"></script>
+            <script src="https://assets.jeffkmeng.com/clipboard/1.5.12/js/bootstrap-clipboard-helper.js"></script>
+<script>
+/* global $ Clipboard */
+	/* var clipboard = */ new Clipboard(".clipboard-btn");
+	$("#urlencode-data").on("input propertychange paste", function(){
+		$("#urlencode-result").val(encodeURIComponent($("#urlencode-data").val()));
+	});
+</script>
 
 </body>
 
