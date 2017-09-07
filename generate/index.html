@@ -23,7 +23,8 @@ Based on jsqrencode | (C) 2010 tz@execpc.com | GPL v3 License
 	}
 	else {
 		
-		var img = new QRious({
+		//var img = 
+		new QRious({
 			element: document.getElementById('qrcode'),
 			value: decodeURIComponent(getQuery("data")),
 			size: getQuery("size") || 4,
@@ -32,7 +33,7 @@ Based on jsqrencode | (C) 2010 tz@execpc.com | GPL v3 License
 			level: getQuery("correction") || "M"
 		});
 		
-		document.getElementById("qrcode").appendChild(img);
+		//document.getElementById("qrcode").appendChild(img);
 
 
 	}
