@@ -15,7 +15,7 @@
 		<div class="container">
 			<link rel="stylesheet" href="css/prism.css" type="text/css" />
 			<h1>Welcome to QRID</h1>
-			<p> A qr reading and writing service mainly intended for internal development and use only, but you're still welcome to use it if you want.</p>
+			<p> A simple qr code service.</p>
 			<h2>Documentation:</h2>
 			<p>To generate a qr code, include a iframe with the following url: <pre><code>https://qr.jeffkmeng.com/generate?<b>param1name</b>=<b>param1value</b>&<b>param2name</b>=<b>param2value</b>&<b>param3name</b>=<b>param3value</b></code></pre></p>
 			<b>Please note that all parameters must be <a href="#urlencode">URL encoded</a> if they are not url safe. You can use <a href="#urlencode">this tool</a>.</b>
@@ -53,7 +53,7 @@
 						<td>correction</td>
 						<td>The
 							<a href="#correction">correction</a> level of the QR Code!</td>
-						<td><code>"H"</code></td>
+						<td><code>"M"</code></td>
 					</tr>
 					<tr>
 						<td>widget</td>
@@ -70,18 +70,20 @@
 			<a name="urlencode"></a>
 			<h3>URL encoding tool:</h3>
 			<p>
-				This is encoded with the standard <code>encodeURIComponent()</code> function of javascript.
+				This is encoded with the standard <code>encodeURIComponent()</code> function of javascript. Fill in either input field and the other will automatically update.
 			</p>
-			<label for="urlencode-data">Data to be encoded:</label>
-			<input class="form-control" id="urlencode-data">
-			<label for="urlencode-result-box">Encoded data(live):</label>
-			<li class="list-group-item" id="urlencode-result-box">
-                        <div class="input-group">
-                            <input type="text" class="form-control code" value='This text box will change as soon as you type something into the above box.' id="urlencode-result">
+			<label for="urlencode-data">Plaintext data:</label>
+			<div class="input-group">
+                            <input type="text" class="form-control code" id="urlencode-data">
                             <span class="input-group-btn" id="urlencode-result-clip">
                                 <button class="btn btn-default clipboard-btn" type="button" data-clipboard-target="#urlencode-result"><img height="20" src="https://assets.jeffkmeng.com/clipboard/1.5.12/svg/clipboard.svg" alt="Copy To Clipboard"></button>
                             </span>
-                        </div>
+			<label for="urlencode-result">Encoded data:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control code" id="urlencode-result">
+                            <span class="input-group-btn" id="urlencode-result-clip">
+                                <button class="btn btn-default clipboard-btn" type="button" data-clipboard-target="#urlencode-result"><img height="20" src="https://assets.jeffkmeng.com/clipboard/1.5.12/svg/clipboard.svg" alt="Copy To Clipboard"></button>
+                            </span>
                         <!-- /input-group -->
                     </li>
 			<a name="correction"></a>
@@ -109,6 +111,9 @@
 <script>
 /* global $ Clipboard */
 	/* var clipboard = */ new Clipboard(".clipboard-btn");
+	$("#urlencode-data").on("input propertychange paste", function(){
+		$("#urlencode-result").val(encodeURIComponent($("#urlencode-data").val()));
+	});
 	$("#urlencode-data").on("input propertychange paste", function(){
 		$("#urlencode-result").val(encodeURIComponent($("#urlencode-data").val()));
 	});
