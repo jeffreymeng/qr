@@ -7,7 +7,7 @@
 		}
 	</script>
 	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" type="text/css" href="https://assets.jeffkmeng.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://assets.jeffkmeng.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -17,9 +17,10 @@
 			<h1>Welcome to QRID</h1>
 			<p> A simple qr code service.</p>
 			<h2>Documentation:</h2>
-			<p>To generate a qr code, include a iframe with the following url: <pre><code>https://qr.jeffkmeng.com/generate?<b>param1name</b>=<b>param1value</b>&<b>param2name</b>=<b>param2value</b>&<b>param3name</b>=<b>param3value</b></code></pre></p>
-			<b>Please note that all parameters must be <a href="#urlencode">URL encoded</a> if they are not url safe. You can use <a href="#urlencode">this tool</a>.</b>
-			Parameters:
+			<p>To generate a qr code, include a iframe with the following url:
+				<pre><code>https://qr.jeffkmeng.com/generate?<b>param1name</b>=<b>param1value</b>&<b>param2name</b>=<b>param2value</b>&<b>param3name</b>=<b>param3value</b></code></pre>
+			</p>
+			<b>Please note that all parameters must be <a href="#urlencode">URL encoded</a> if they are not url safe. You can use <a href="#urlencode">this tool</a>.</b> Parameters:
 			<table class="table table-hover">
 				<thead>
 					<tr>
@@ -42,29 +43,20 @@
 					<tr>
 						<td>foreground</td>
 						<td>The dark color(foreground) of the qr code(hexadecimal) Make sure not to include the hashtag(#)!</td>
-						<td><code>"000000"</code></td>
+						<td><code>000000</code></td>
 					</tr>
 					<tr>
 						<td>background</td>
 						<td>The light color(background) of the qr code(hexadecimal) Make sure not to include the hashtag(#)!</td>
-						<td><code>"FFFFFF"</code></td>
+						<td><code>FFFFFF</code></td>
 					</tr>
 					<tr>
 						<td>correction</td>
 						<td>The
 							<a href="#correction">correction</a> level of the QR Code!</td>
-						<td><code>"M"</code></td>
+						<td><code>M</code></td>
 					</tr>
-					<tr>
-						<td>widget</td>
-						<td>Wether to include a widget for the qr code or not. Choose from: html(specify html to go inside wiget), text(choose text to go inside wiget), data(only put the qr code data inside the wiget), link(like data, except a link element is added) or none</td>
-						<td><code>null</code></td>
-					</tr>
-					<tr>
-						<td>widgetData</td>
-						<td>If you choose html or text for the wiget, you MUST put the <a href="#urlencode">URL encoded</a> data here, or else the widget will not show. Optional if you choose link for the widget attribute(if you use this attribute, the link text will be changed to this attribute). Ignored if you did not choose html or text for widget.</td>
-						<td><code>null</code></td>
-					</tr>
+
 				</tbody>
 			</table>
 			<a name="urlencode"></a>
@@ -74,18 +66,20 @@
 			</p>
 			<label for="urlencode-data">Plaintext data:</label>
 			<div class="input-group">
-                            <input type="text" class="form-control code" id="urlencode-data">
-                            <span class="input-group-btn" id="urlencode-result-clip">
+				<input type="text" class="form-control code" id="urlencode-data">
+				<span class="input-group-btn" id="urlencode-result-clip">
                                 <button class="btn btn-default clipboard-btn" type="button" data-clipboard-target="#urlencode-result"><img height="20" src="https://assets.jeffkmeng.com/clipboard/1.5.12/svg/clipboard.svg" alt="Copy To Clipboard"></button>
                             </span>
+			</div>
 			<label for="urlencode-result">Encoded data:</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control code" id="urlencode-result">
-                            <span class="input-group-btn" id="urlencode-result-clip">
+			<div class="input-group">
+				<input type="text" class="form-control code" id="urlencode-result">
+				<span class="input-group-btn" id="urlencode-result-clip">
                                 <button class="btn btn-default clipboard-btn" type="button" data-clipboard-target="#urlencode-result"><img height="20" src="https://assets.jeffkmeng.com/clipboard/1.5.12/svg/clipboard.svg" alt="Copy To Clipboard"></button>
                             </span>
-                        <!-- /input-group -->
-                    </li>
+				<!-- /input-group -->
+				</li>
+			</div>
 			<a name="correction"></a>
 			<h3>What are correction levels?</h3>
 			<p>
@@ -105,19 +99,20 @@
 		</div>
 	</div>
 	<script src="https://assets.jeffkmeng.com/jquery/2.2.4/js/jquery.min.js"></script>
-<script src="https://assets.jeffkmeng.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-            <script src="https://assets.jeffkmeng.com/clipboard/1.5.12/js/clipboard.min.js"></script>
-            <script src="https://assets.jeffkmeng.com/clipboard/1.5.12/js/bootstrap-clipboard-helper.js"></script>
-<script>
-/* global $ Clipboard */
-	/* var clipboard = */ new Clipboard(".clipboard-btn");
-	$("#urlencode-data").on("input propertychange paste", function(){
-		$("#urlencode-result").val(encodeURIComponent($("#urlencode-data").val()));
-	});
-	$("#urlencode-data").on("input propertychange paste", function(){
-		$("#urlencode-result").val(encodeURIComponent($("#urlencode-data").val()));
-	});
-</script>
+	<script src="https://assets.jeffkmeng.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://assets.jeffkmeng.com/clipboard/1.5.12/js/clipboard.min.js"></script>
+	<script src="https://assets.jeffkmeng.com/clipboard/1.5.12/js/bootstrap-clipboard-helper.js"></script>
+	<script>
+		/* global $ Clipboard */
+		/* var clipboard = */
+		new Clipboard(".clipboard-btn");
+		$("#urlencode-data").on("input propertychange paste", function() {
+			$("#urlencode-result").val(encodeURIComponent($("#urlencode-data").val()));
+		});
+		$("#urlencode-data").on("input propertychange paste", function() {
+			$("#urlencode-result").val(encodeURIComponent($("#urlencode-data").val()));
+		});
+	</script>
 
 </body>
 
